@@ -2,7 +2,7 @@
 
 ---
 
-## 2. Abstract
+## 1. Abstract
 
 This project implements a secure, centralised EV charging payment gateway simulation that combines modern cryptographic primitives with a blockchain-backed audit trail. The system supports multi-user concurrent transactions across multiple client machines connected to a single grid authority server. It demonstrates:
 
@@ -10,6 +10,19 @@ This project implements a secure, centralised EV charging payment gateway simula
 - public-key encryption for credential transmission,
 - blockchain immutability for transaction logging,
 - and a quantum-risk demonstration for RSA via Shor's algorithm simulation.
+
+---
+
+## 2. Key Features
+
+- Secure EV charging payment workflow
+- RSA-encrypted credential transmission
+- Lightweight ASCON-encrypted kiosk QR payloads
+- Blockchain-backed immutable transaction ledger
+- Concurrent multi-client transaction handling
+- Hardware failure simulation with automatic refund logic
+- Quantum-risk demonstration using Shor’s algorithm simulation
+- Thread-safe transaction processing
 
 ---
 
