@@ -1,10 +1,12 @@
-# Secure Centralised EV Charging Payment Gateway
+# Secure Centralized EV Charging Payment Gateway
+
+Secure EV charging payment infrastructure integrating RSA encryption, ASCON lightweight cryptography, blockchain-backed auditing, and concurrent multi-client transaction processing.
 
 ---
 
 ## 1. Abstract
 
-This project implements a secure, centralised EV charging payment gateway simulation that combines modern cryptographic primitives with a blockchain-backed audit trail. The system supports multi-user concurrent transactions across multiple client machines connected to a single grid authority server. It demonstrates:
+This project implements a secure, centralized EV charging payment gateway simulation that combines modern cryptographic primitives with a blockchain-backed audit trail. The system supports multi-user concurrent transactions across multiple client machines connected to a single grid authority server. It demonstrates:
 
 - lightweight cryptography for kiosk QR payloads,
 - public-key encryption for credential transmission,
@@ -45,7 +47,7 @@ This project implements a secure, centralised EV charging payment gateway simula
 | Charging Kiosk | Generates and scans encrypted QR payload containing franchise identity |
 | Franchise | Receives payment for charging services |
 
-**Scope note:** This is a controlled academic simulation; account deletion and production-grade persistence are intentionally out of scope.
+**Scope note:** This is a controlled prototype implementation; account deletion and production-grade persistence are intentionally out of scope.
 
 ---
 
@@ -115,7 +117,7 @@ When enabled, the backend:
 ## 9. Repository Structure
 
 ```text
-ev-charging-gateway/
+Secure-EV-Charging-Blockchain-Payment-Gateway/
 ├── backend/
 │   └── main.py
 ├── blockchain/
@@ -143,7 +145,7 @@ ev-charging-gateway/
 
 ---
 
-## 10. Environment and Dependency Setup (From Scratch)
+## 10. Environment and Dependency Setup
 
 ### 10.1 Prerequisites
 - Windows + PowerShell
@@ -198,7 +200,7 @@ pip install -r requirements.txt
 ### Client machine(s)
 
 ```powershell
-.\run_client.ps1 -ServerIp 172.16.46.192
+.\run_client.ps1 -ServerIp <SERVER_IP>
 ```
 
 Alternative for clients:
@@ -219,7 +221,7 @@ uvicorn backend.main:app --host 0.0.0.0 --port 8000 --workers 1
 ```powershell
 .\evcrypto_env\Scripts\Activate.ps1
 pip install -r requirements.txt
-$env:GRID_URL="http://172.16.46.192:8000"
+$env:GRID_URL="http://<SERVER_IP>:8000"
 python main_flow.py
 ```
 
@@ -230,7 +232,7 @@ python main_flow.py
 - Ensure all machines are on the same LAN.
 - On the server machine, allow inbound TCP `8000`.
 - Verify reachability from client browser:
-  - `http://172.16.46.192:8000/grid_info`
+  - `http://<SERVER_IP>:8000/grid_info`
 
 ---
 
@@ -337,26 +339,26 @@ Run the client from a short path such as `C:\evdemo`.
 
 ```powershell
 New-Item -ItemType Directory -Force C:\evdemo | Out-Null
-robocopy "C:\Users\shiva\OneDrive\Documents\projects\ev-charging-pq-blockchain-gateway-pr-kiosk-clean (2)\ev-charging-pq-blockchain-gateway-pr-kiosk-clean\ev-charging-pq-blockchain-gateway-pr-kiosk-clean" "C:\evdemo" /E
+robocopy "C:\path\to\Secure-EV-Charging-Blockchain-Payment-Gateway" "C:\evdemo" /E
 cd C:\evdemo
-.\run_client.bat -ServerIp 172.16.46.192
+.\run_client.bat -ServerIp <SERVER_IP>
 ```
 
 ### 19.2 Faster Alternative (No Full Copy)
 
-Map a short drive letter to the long project path:
+Map a short drive letter to the project path:
 
 ```powershell
-subst X: "C:\Users\shiva\OneDrive\Documents\projects\ev-charging-pq-blockchain-gateway-pr-kiosk-clean (2)\ev-charging-pq-blockchain-gateway-pr-kiosk-clean\ev-charging-pq-blockchain-gateway-pr-kiosk-clean"
+subst X: "C:\path\to\Secure-EV-Charging-Blockchain-Payment-Gateway"
 cd X:\
-.\run_client.bat -ServerIp 172.16.46.192
+.\run_client.bat -ServerIp <SERVER_IP>
 ```
 
 If the error persists, recreate virtual environment from short path:
 
 ```powershell
 Remove-Item -Recurse -Force .\evcrypto_env
-.\run_client.bat -ServerIp 172.16.46.192
+.\run_client.bat -ServerIp <SERVER_IP>
 ```
 
 ### 19.3 Live Demo Checklist with This Issue
