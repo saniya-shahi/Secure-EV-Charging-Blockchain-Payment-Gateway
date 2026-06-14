@@ -1,21 +1,10 @@
-# Secure Centralized EV Charging Payment Gateway
-## BITS F463 Cryptography — Term Project 2025-26
-
----
-
-## 1. Team Members
-
-- **Saniya Shahi** — 2022A8PS0810H
-- **Kumar Shivansh Sinha** — 2022B1AA1227H
-- **Surbhit Jain** — 2022B3A70868H
-- **Rickpoul Ghosh** — 2022AAPS1549H
-- **Gaurvi Khurana** — 2023A7PS0035H
+# Secure Centralised EV Charging Payment Gateway
 
 ---
 
 ## 2. Abstract
 
-This project implements a secure, centralized EV charging payment gateway simulation that combines modern cryptographic primitives with a blockchain-backed audit trail. The system supports multi-user concurrent transactions across multiple client machines connected to a single grid authority server. It demonstrates:
+This project implements a secure, centralised EV charging payment gateway simulation that combines modern cryptographic primitives with a blockchain-backed audit trail. The system supports multi-user concurrent transactions across multiple client machines connected to a single grid authority server. It demonstrates:
 
 - lightweight cryptography for kiosk QR payloads,
 - public-key encryption for credential transmission,
@@ -27,7 +16,7 @@ This project implements a secure, centralized EV charging payment gateway simula
 ## 3. Objectives
 
 - Build an end-to-end EV charging payment flow with clear system roles.
-- Integrate cryptographic mechanisms from the course syllabus in one practical workflow.
+- Integrate cryptographic mechanisms in one practical workflow.
 - Provide tamper-evident transaction recording.
 - Simulate realistic operational and failure edge cases.
 - Support LAN-based multi-user demonstration.
